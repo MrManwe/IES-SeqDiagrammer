@@ -1,0 +1,31 @@
+<meta charset="ISO-8859-1"> 
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="dss-drawer.css">
+    <title>
+        Diagrames de Seqüència
+    </title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="dss.js"></script>
+    <script src="dss-drawer.js"></script>
+    
+</head>
+<body>
+<svg width="100%" height="100%" id="canvas">
+    
+</svg>
+</body>
+<script>
+    var executar = dss.inici()
+        .call("Persona", "fesFeina()");
+
+    var diagrama = dss.inici().call(":TxCrearMenu", "executar()", null);
+
+
+    console.log(diagrama); 
+
+    var svgCanvas = document.getElementsByTagName('svg')[0]; //Get svg element
+    dss_drawer.draw(diagrama, svgCanvas);
+</script>
+</html>

@@ -1,0 +1,41 @@
+rect.dss-swimlane
+{
+    fill: white;
+    stroke: black;
+    stroke-width: 2;
+}
+
+text.dss-swimlane
+{
+    fill: black;
+    font-family: 'Roboto';
+    font-size: 22px;
+}
+
+line.dss-call
+{
+    stroke: black;
+    stroke-width: 2;
+}
+
+text.dss-call
+{
+    fill: black;
+    font-family: 'Roboto';
+    font-size: 16px;
+}
+
+
+polygon.dss-call
+{
+    fill: black;
+    stroke: black;
+    stroke-width: 2;
+}
+
+polyline.dss-call
+{
+    fill: none;
+    stroke: black;
+    stroke-width: 2;
+}
