@@ -5,10 +5,23 @@ rect.dss-swimlane
     stroke-width: 2;
 }
 
+line.dss-swimlane
+{
+    stroke: black;
+    stroke-width: 2;
+}
+
+rect.dss-activeswimlane
+{
+    fill: white;
+    stroke: black;
+    stroke-width: 2;
+}
+
 text.dss-swimlane
 {
     fill: black;
-    font-family: 'Roboto';
+    font-family: 'Arial';
     font-size: 22px;
 }
 
@@ -21,7 +34,7 @@ line.dss-call
 text.dss-call
 {
     fill: black;
-    font-family: 'Roboto';
+    font-family: 'Arial';
     font-size: 16px;
 }
 

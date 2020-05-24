@@ -1,7 +1,7 @@
 <meta charset="ISO-8859-1"> 
 <html>
 <head>
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    
     <link rel="stylesheet" type="text/css" href="dss-drawer.css">
     <title>
         Diagrames de Seqüència
@@ -17,13 +17,21 @@
 </svg>
 </body>
 <script>
+    var fesFeina = dss.inici()
+        .call("ciutat:Ciutat", "ObteNumHabitants()", "numHabitants", null)
+        ;
+
     var executar = dss.inici()
-        .call("Persona", "fesFeina()");
+        .call(":CapaDeDades", "ObtePersona(dni)", "persona", null)
+        .call(":CapaDeDades", "ObteCiutat(nomCiutat)", "ciutat", null)
+        .call("persona:Persona", "FesFeina(ciutat)", "llista", fesFeina)
+        ;
 
-    var diagrama = dss.inici().call(":TxCrearMenu", "executar()", null);
+    var diagrama = dss.inici()
+        .call(":TxCrearMenu", "executar()", "llista", executar)
+        ;
 
 
-    console.log(diagrama); 
 
     var svgCanvas = document.getElementsByTagName('svg')[0]; //Get svg element
     dss_drawer.draw(diagrama, svgCanvas);
