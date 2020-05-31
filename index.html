@@ -17,7 +17,13 @@
 </svg>
 </body>
 <script>
+    var claculaRequisits = dss.inici()
+        .call("ciutat:Ciutat", "ObteDadesTrafic()", "trafic")
+        ;
+
     var fesFeina = dss.inici()
+        .call("ciutat:Ciutat", "ObteNumHabitants()", "numHabitants", null)
+        .call("persona:Persona", "CalculaRequisits()", "requisits", claculaRequisits)
         .call("ciutat:Ciutat", "ObteNumHabitants()", "numHabitants", null)
         ;
 
