@@ -18,6 +18,13 @@ rect.dss-activeswimlane
     stroke-width: 2;
 }
 
+rect.dss-frame
+{
+    fill: transparent;
+    stroke: black;
+    stroke-width: 2;
+}
+
 text.dss-swimlane
 {
     fill: black;
@@ -43,7 +50,7 @@ polygon.dss-call
 {
     fill: black;
     stroke: black;
-    stroke-width: 2;
+    stroke-width: 1;
 }
 
 polyline.dss-call

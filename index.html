@@ -12,20 +12,23 @@
     
 </head>
 <body>
-<svg width="100%" height="100%" id="canvas">
+<svg id="canvas" xmlns="http://www.w3.org/2000/svg">
     
 </svg>
 </body>
 <script>
     var claculaRequisits = dss.inici()
-        .call("ciutat:Ciutat", "ObteDadesTrafic()", "trafic")
+        .create("habitant:Persona", "(dni, edat)")
+        .comment("requisits = trafic / 4 + delta")
+        .call("habitant:Persona", "CalculaDelta()", "delta")
         ;
 
     var fesFeina = dss.inici()
-        .call("ciutat:Ciutat", "ObteNumHabitants()", "numHabitants", null)
-        .call("persona:Persona", "CalculaRequisits()", "requisits", claculaRequisits)
-        .call("ciutat:Ciutat", "ObteNumHabitants()", "numHabitants", null)
+        .call("persona:Persona", "CalculaRequisits()", "requisits", null)
+        .frame("opt", "[citizens > 4]", claculaRequisits)
         ;
+
+        
 
     var executar = dss.inici()
         .call(":CapaDeDades", "ObtePersona(dni)", "persona", null)
@@ -41,5 +44,10 @@
 
     var svgCanvas = document.getElementsByTagName('svg')[0]; //Get svg element
     dss_drawer.draw(diagrama, svgCanvas);
+
+    var box = svgCanvas.getBBox();
+    
+    svgCanvas.setAttribute("width", box.width + box.x + 20);
+    svgCanvas.setAttribute("height", box.height + box.y + 20);
 </script>
 </html>
